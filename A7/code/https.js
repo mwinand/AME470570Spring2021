@@ -3,9 +3,9 @@ require('greenlock-express').create({
   version: 'draft-11'
 , server: 'https://acme-v02.api.letsencrypt.org/directory'
 //, server: 'https://acme-staging-v02.api.letsencrypt.org/directory'  // staging
-, email: ''                                     // CHANGE THIS
+, email: 'mwinand@asu.edu'                                     // CHANGE THIS
 , agreeTos: true
-, approveDomains: [ 'example.com', 'www.example.com' ]              // CHANGE THIS
+, approveDomains: [ 'mwinand.httpsexample.xyz', 'www.mwinand.httpsexample.xyz' ]              // CHANGE THIS
 , store: require('greenlock-store-fs')
 , configDir: homeDir
 //, app: require('express')().use('/', function (req, res) {
@@ -15,4 +15,3 @@ require('greenlock-express').create({
 , app: require('./server.js')
 //, communityMember: true
 }).listen(8080, 8443);
-
