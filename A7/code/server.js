@@ -34,7 +34,7 @@ app.post('/uploadImage', function(req, res){
     var s3Path = '/' + intname;
     var buf = new Buffer(req.body.data.replace(/^data:image\/\w+;base64,/, ""),'base64');
     var params = {
-        Bucket:'bucket470570',
+        Bucket:'ame470ba',
         ACL:'public-read',
         Key:intname,
         Body: buf,
@@ -52,10 +52,10 @@ app.post('/uploadFile', function(req, res){
     var fileType =  req.files.input.type;
     var tmpPath = req.files.input.path;
     var s3Path = '/' + intname;
-    
+
     fs.readFile(tmpPath, function (err, data) {
         var params = {
-            Bucket:'bucket470570',
+            Bucket:'ame470ba',
             ACL:'public-read',
             Key:intname,
             Body: data,

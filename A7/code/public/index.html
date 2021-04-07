@@ -19,10 +19,10 @@ var fileUploaded = function()
 
     //fd.append('data', data);
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(e) {  
+    xhr.onreadystatechange = function(e) {
       if (xhr.readyState != 4) { return; }
         // callback logic
-       document.getElementById("preview").src = "https://bucket470570.s3-us-west-2.amazonaws.com/" + fileInput;
+       document.getElementById("preview").src = "https://ame470ba.s3-us-west-2.amazonaws.com/" + fileInput;
     };
     xhr.open("POST", "/uploadFile", true);
     xhr.send(fd);
@@ -39,11 +39,11 @@ function saveImageEdit(){
 
       //fd.append('data', data);
       var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function(e) {  
+      xhr.onreadystatechange = function(e) {
         cancelImageEdit();
         if (xhr.readyState != 4) { return; }
           // callback logic
-        document.getElementById("preview").src = "https://bucket470570.s3-us-west-2.amazonaws.com/" + fileInput + "?t=" + new Date().getTime();
+        document.getElementById("preview").src = "https://ame470ba.s3-us-west-2.amazonaws.com/" + fileInput + "?t=" + new Date().getTime();
       };
       xhr.open("POST", "/uploadImage", true);
       xhr.send(fd);
@@ -89,7 +89,7 @@ function editImage(){
       .delButton
       {
           float: right;
-      }      
+      }
       #theImage{
         height: 200px;
         width: 100%;
@@ -125,11 +125,11 @@ function editImage(){
 </head>
 
 <body>
-  <input type='file' id='theFileUploader' onchange='fileUploaded()'> 
-  <img style='height: 200px;display: block;width: auto;' id='preview'> 
+  <input type='file' id='theFileUploader' onchange='fileUploaded()'>
+  <img style='height: 200px;display: block;width: auto;' id='preview'>
   <!--  <button onclick='editImage()'> Edit </button> -->
 
-  <div id='editWrapper'> 
+  <div id='editWrapper'>
     <iframe crossorigin='anonymous'  id='DRFrame'> </iframe>
     <button style='right:0px' onclick='saveImageEdit()'> Save </button>
     <button onclick='cancelImageEdit()'> Cancel </button>
