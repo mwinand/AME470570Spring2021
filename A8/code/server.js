@@ -10,8 +10,8 @@ var url = require("url"),
 	querystring = require("querystring");
 var passport = require('passport');
 var fs = require('fs');
-	var dbURL = 'mongodb://127.0.0.1:27017/rssReader';
-	//var dbURL = 'mongodb://34.219.163.158:27017/rssReader';
+	//var dbURL = 'mongodb://127.0.0.1:27017/rssReader';
+	var dbURL = 'mongodb://3.128.186.176:27017/rssReader';
 var path = require('path'),
   express = require('express'),
   db = require('mongoskin').db(dbURL);
@@ -123,7 +123,7 @@ app.post('/uploadImage', function(req, res){
     var buf = new Buffer(req.body.data.replace(/^data:image\/\w+;base64,/, ""),'base64');
     console.log(intname);
     var params = {
-        Bucket:'bucket470570',
+        Bucket:'bucket470ba',
         ACL:'public-read',
         Key:intname,
         Body: buf,

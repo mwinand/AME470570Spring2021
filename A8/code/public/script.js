@@ -2,13 +2,13 @@ var allFeeds = [];
 var allItems = [];
 var currFeed = 0;
 var currItem = 0;
-var bucketURL = "https://bucket470570.s3-us-west-2.amazonaws.com";
+var bucketURL = "https://ame470ba.s3-us-west-2.amazonaws.com";
 
 function generateFeedMarkup()
 {
   var markup = "";
   for(var i = 0; i < allFeeds.length; i++){
-    markup += "<button onclick='feedSelected("+i+")'>"  
+    markup += "<button onclick='feedSelected("+i+")'>"
     + "<img style='float:left' height=50 src='"+ bucketURL + allFeeds[i].image +"'>"
     +"<p>"+  allFeeds[i].name + "</p>"+
      "</button>"
@@ -66,7 +66,7 @@ function itemSelected(n)
 
   document.getElementById("itemDetails").innerHTML = markup;
 }
- 
+
 function goBack()
 {
   $("body").removeClass("details")
